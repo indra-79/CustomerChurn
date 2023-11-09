@@ -1,5 +1,5 @@
 
-# Customer Churn Prediction Project Report
+# Customer Churn Prediction 
 
 ## Project Overview:
 
@@ -8,6 +8,8 @@ The Customer Churn Prediction project is designed to help businesses identify cu
 ### Technologies Used:
 
 - Data Collection, Data Cleaning
+- Python libraries: scikit-learn, pandas
+- Languages: Python, HTML, CSS
 - Machine Learning: scikit-learn, Regression model
 - Web Deployment: Flask
 
