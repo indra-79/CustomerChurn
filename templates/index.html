@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Churn Prediction</title>
+    <link rel="stylesheet" type="text/css" href="static/index.css">
+</head>
+<body>
+    <h1>Churn Prediction</h1>
+    <form action="/predict_churn" method="POST">
+        <label for="SeniorCitizen">Senior Citizen:</label>
+        <select id="SeniorCitizen" name="SeniorCitizen">
+            <option value="1">Yes</option>
+            <option value="0">No</option>
+        </select><br>
+
+        <label for="tenure">Tenure:</label>
+        <input type="number" id="tenure" name="tenure"><br>
+
+        <label for="MonthlyCharges">Monthly Charges:</label>
+        <input type="number" step="0.01" id="MonthlyCharges" name="MonthlyCharges"><br>
+
+        <label for="TotalCharges">Total Charges:</label>
+        <input type="number" step="0.01" id="TotalCharges" name="TotalCharges"><br>
+
+        <label for="gender_Male">Gender (Male):</label>
+        <select id="gender_Male" name="gender_Male">
+            <option value="1">Yes</option>
+            <option value="0">No</option>
+        </select><br>
+
+        <label for="Partner_Yes">Partner (Yes):</label>
+        <select id="Partner_Yes" name="Partner_Yes">
+            <option value="1">Yes</option>
+            <option value="0">No</option>
+        </select><br>
+
+        <label for="Dependents_Yes">Dependents (Yes):</label>
+        <select id="Dependents_Yes" name="Dependents_Yes">
+            <option value="1">Yes</option>
+            <option value="0">No</option>
+        </select><br>
+
+        <label for="PhoneService_Yes">Phone Service (Yes):</label>
+        <select id="PhoneService_Yes" name="PhoneService_Yes">
+            <option value="1">Yes</option>
+            <option value="0">No</option>
+        </select><br>
+
+        <label for="MultipleLines_No phone service">Multiple Lines (No phone service):</label>
+        <select id="MultipleLines_No phone service" name="MultipleLines_No phone service">
+            <option value="1">No phone service</option>
+            <option value="0">No</option>
+        </select><br>
+
+        <label for="MultipleLines_Yes">Multiple Lines (Yes):</label>
+        <select id="MultipleLines_Yes" name="MultipleLines_Yes">
+            <option value="1">Yes</option>
+            <option value="0">No</option>
+        </select><br>
+
+        <label for="InternetService_Fiber optic">Internet Service (Fiber optic):</label>
+        <select id="InternetService_Fiber optic" name="InternetService_Fiber optic">
+            <option value="1">Fiber optic</option>
+            <option value="0">No</option>
+        </select><br>
+
+        <label for="InternetService_No">Internet Service (No):</label>
+        <select id="InternetService_No" name="InternetService_No">
+            <option value="1">No</option>
+            <option value="0">No</option>
+        </select><br>
+
+        <label for="OnlineSecurity_No internet service">Online Security (No internet service):</label>
+        <select id="OnlineSecurity_No internet service" name="OnlineSecurity_No internet service">
+            <option value="1">No internet service</option>
+            <option value="0">No</option>
+        </select><br>
+
+        <label for="OnlineSecurity_Yes">Online Security (Yes):</label>
+        <select id="OnlineSecurity_Yes" name="OnlineSecurity_Yes">
+            <option value="1">Yes</option>
+            <option value="0">No</option>
+        </select><br>
+
+        <label for="OnlineBackup_No internet service">Online Backup (No internet service):</label>
+        <select id="OnlineBackup_No internet service" name="OnlineBackup_No internet service">
+            <option value="1">No internet service</option>
+            <option value="0">No</option>
+        </select><br>
+
+        <label for="OnlineBackup_Yes">Online Backup (Yes):</label>
+        <select id="OnlineBackup_Yes" name="OnlineBackup_Yes">
+            <option value="1">Yes</option>
+            <option value="0">No</option>
+        </select><br>
+
+        <label for="DeviceProtection_No internet service">Device Protection (No internet service):</label>
+        <select id="DeviceProtection_No internet service" name="DeviceProtection_No internet service">
+            <option value="1">No internet service</option>
+            <option value="0">No</option>
+        </select><br>
+
+        <label for="DeviceProtection_Yes">Device Protection (Yes):</label>
+        <select id="DeviceProtection_Yes" name="DeviceProtection_Yes">
+            <option value="1">Yes</option>
+            <option value="0">No</option>
+        </select><br>
+
+        <label for="TechSupport_No internet service">Tech Support (No internet service):</label>
+        <select id="TechSupport_No internet service" name="TechSupport_No internet service">
+            <option value="1">No internet service</option>
+            <option value="0">No</option>
+        </select><br>
+
+        <label for="TechSupport_Yes">Tech Support (Yes):</label>
+        <select id="TechSupport_Yes" name="TechSupport_Yes">
+            <option value="1">Yes</option>
+            <option value="0">No</option>
+        </select><br>
+
+        <label for="StreamingTV_No internet service">Streaming TV (No internet service):</label>
+        <select id="StreamingTV_No internet service" name="StreamingTV_No internet service">
+            <option value="1">No internet service</option>
+            <option value="0">No</option>
+        </select><br>
+
+        <label for="StreamingTV_Yes">Streaming TV (Yes):</label>
+        <select id="StreamingTV_Yes" name="StreamingTV_Yes">
+            <option value="1">Yes</option>
+            <option value="0">No</option>
+        </select><br>
+
+        <label for="StreamingMovies_No internet service">Streaming Movies (No internet service):</label>
+        <select id="StreamingMovies_No internet service" name="StreamingMovies_No internet service">
+            <option value="1">No internet service</option>
+            <option value="0">No</option>
+        </select><br>
+
+        <label for="StreamingMovies_Yes">Streaming Movies (Yes):</label>
+        <select id="StreamingMovies_Yes" name="StreamingMovies_Yes">
+            <option value="1">Yes</option>
+            <option value="0">No</option>
+        </select><br>
+
+        <label for="Contract_One year">Contract (One year):</label>
+        <select id="Contract_One year" name="Contract_One year">
+            <option value="1">One year</option>
+            <option value="0">No</option>
+        </select><br>
+
+        <label for="Contract_Two year">Contract (Two years):</label>
+        <select id="Contract_Two year" name="Contract_Two year">
+            <option value="1">Two years</option>
+            <option value="0">No</option>
+        </select><br>
+
+        <label for="PaperlessBilling_Yes">Paperless Billing (Yes):</label>
+        <select id="PaperlessBilling_Yes" name="PaperlessBilling_Yes">
+            <option value="1">Yes</option>
+            <option value="0">No</option>
+        </select><br>
+
+        <label for="PaymentMethod_Credit card (automatic)">Payment Method (Credit card, automatic):</label>
+        <select id="PaymentMethod_Credit card (automatic)" name="PaymentMethod_Credit card (automatic)">
+            <option value="1">Credit card (automatic)</option>
+            <option value="0">No</option>
+        </select><br>
+
+        <label for="PaymentMethod_Electronic check">Payment Method (Electronic check):</label>
+        <select id="PaymentMethod_Electronic check" name="PaymentMethod_Electronic check">
+            <option value="1">Electronic check</option>
+            <option value="0">No</option>
+        </select><br>
+
+        <label for="PaymentMethod_Mailed check">Payment Method (Mailed check):</label>
+        <select id="PaymentMethod_Mailed check" name="PaymentMethod_Mailed check">
+            <option value="1">Mailed check</option>
+            <option value="0">No</option>
+        </select><br>
+
+        <input type="submit" value="Predict">
+    </form>
+</body>
+</html>
